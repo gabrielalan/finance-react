@@ -1,30 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import ChartWrapper from '../../../stateless/chart/ChartWrapper';
 import DoughnutChart from '../../../stateless/chart/DoughnutChart';
+import { mapGroupsToDatasets } from '../../../../helpers/mapDataToChartset';
 
-class Home extends Component {
-  render() {
-    const data = {
-      datasets: [{
-        data: [10, 20, 30],
-        backgroundColor: [
-          '#36A2EB',
-          '#FF3784',
-          '#FF3755',
-        ]
-      }],
-      labels: [
-        'Red',
-        'Yellow',
-        'Blue'
-      ]
-    };
+const Home = ({ outboundByGroup }) => (<>
+  <main className="container-fluid">
+    <h1>Home</h1>
+    <div className="row">
+      <div className="col-6">
+        <ChartWrapper chart={DoughnutChart} data={outboundByGroup} />
+      </div>
+    </div>
+  </main>
+</>);
 
-    return (<>
-      <h1>Home</h1>
-      <ChartWrapper chart={DoughnutChart} data={data} />
-    </>);
-  }
-}
-
-export default Home;
+export default connect(mapGroupsToDatasets)(Home);

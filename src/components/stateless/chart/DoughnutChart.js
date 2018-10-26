@@ -17,7 +17,7 @@ class DoughnutChart extends Component {
     const chart = this.state.chart;
     const data = this.props.data;
 
-    data.datasets.forEach((dataset, i) => chart.data.datasets[i].data = dataset.data);
+    data.datasets.forEach((dataset, i) => chart.data.datasets[i] = dataset);
 
     chart.data.labels = data.labels;
     chart.update();
