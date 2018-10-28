@@ -10,6 +10,11 @@ export const setList = (data) => ({
   data
 });
 
+export const setFilter = (data) => ({
+  type: 'SET_FILTER',
+  data
+});
+
 export const loadList = () => dispatch => {
   dispatch(loadListAction());
   fetchJson('/api/transactions').then(compose(

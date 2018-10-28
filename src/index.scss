@@ -4,3 +4,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.container-with-loading {
+  position: relative;
+}
+
+.app__filter__actions {
+  padding-top: 32px;
+}
